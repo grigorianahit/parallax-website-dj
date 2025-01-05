@@ -1,0 +1,231 @@
+.music_title {
+    color: white;
+    text-align: center;
+    padding: 200px 0 50px;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.music-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    overflow: visible;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10%;
+}
+
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px) brightness(0.4);
+    z-index: 0;
+}
+
+.content-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1;
+}
+
+.album-image {
+    flex: 0 0 300px;
+}
+
+.album-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    min-width: 200px;
+    text-align: left;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    transition: opacity 0.3s ease;
+}
+
+.track-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0 0;
+    text-transform: uppercase;
+}
+
+.track-title-under {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.toleft {
+    transform: rotate(-4deg);
+}
+
+.toright {
+    transform: rotate(4deg);
+}
+
+.listen-button {
+    display: inline-block;
+    opacity: 0.7;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 50px;
+}
+
+.listen-button:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+/* Large screens (1200px and below) */
+@media (max-width: 1200px) {
+    .content-container {
+        max-width: 700px;
+        gap: 30px;
+    }
+
+    .album-image {
+        flex: 0 0 280px;
+    }
+}
+
+/* Medium screens (992px and below) */
+@media (max-width: 992px) {
+    .music_title {
+        padding: 150px 0 40px;
+        font-size: 36px;
+    }
+
+    .content-container {
+        max-width: 600px;
+        gap: 25px;
+    }
+
+    .album-image {
+        flex: 0 0 250px;
+    }
+
+    .track-title {
+        font-size: 1.8rem;
+    }
+
+    .listen-button {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .music_title {
+        padding: 120px 0 30px;
+        font-size: 32px;
+    }
+
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 15px;
+        min-height: auto;
+    }
+
+    .album-image {
+        flex: 0 0 auto;
+        max-width: 280px;
+        margin: 0 auto;
+        order: 0;
+    }
+
+    .info-container {
+        text-align: center;
+        position: relative;
+        top: auto;
+        padding: 20px 0;
+        order: 1;
+    }
+
+    .track-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile Large (576px and below) */
+@media (max-width: 576px) {
+    .music_title {
+        padding: 100px 0 25px;
+        font-size: 28px;
+    }
+
+    .content-container {
+        padding: 20px 12px;
+    }
+
+    .album-image {
+        max-width: 240px;
+    }
+
+    .track-title {
+        font-size: 1.4rem;
+    }
+
+    .track-title-under {
+        font-size: 0.9rem;
+    }
+
+    .listen-button {
+        font-size: 16px;
+        margin-top: 30px;
+    }
+}
+
+/* Mobile Small (400px and below) */
+@media (max-width: 400px) {
+    .music_title {
+        padding: 80px 0 20px;
+        font-size: 24px;
+    }
+
+    .album-image {
+        max-width: 200px;
+    }
+
+    .track-title {
+        font-size: 1.2rem;
+    }
+
+    .track-title-under {
+        font-size: 0.8rem;
+    }
+
+    .listen-button {
+        font-size: 14px;
+        margin-top: 25px;
+    }
+}

@@ -1,0 +1,237 @@
+/* First Section - Live Events */
+.live-events {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 120px; /* Space for header */
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.live-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.live-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.live-title {
+    font-size: 120px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.event-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.event-date {
+    width: 120px;
+    font-size: 16px;
+    opacity: 0.9;
+    color: white;
+}
+
+.event-venue {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .live-content {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .live-events {
+        padding-top: 100px;
+    }
+
+    .live-title {
+        font-size: 90px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .live-events {
+        padding-top: 90px;
+    }
+
+    .live-content {
+        padding: 0 20px;
+    }
+
+    .live-title {
+        font-size: 70px;
+        margin-bottom: 40px;
+    }
+    
+    .event-date {
+        width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .live-events {
+        padding-top: 80px;
+    }
+
+    .live-title {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 8px 0;
+    }
+    
+    .event-date {
+        width: auto;
+    }
+    
+    .event-date,
+    .event-venue {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .live-events {
+        padding-top: 70px;
+    }
+
+    .live-content {
+        padding: 0 15px;
+    }
+
+    .live-title {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+}
+
+/* //////////////////////////////////////////////////////Second Section - Video Section//////////////////////////////////////////////////////////////////////////////////////////// */
+.video-section {
+    background-color: #000;
+    padding: 100px 40px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 4; /* Ensure it's above the video background */
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Video section responsive adjustments */
+@media (max-width: 992px) {
+    .video-section {
+        padding: 80px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-section {
+        padding: 60px 20px;
+    }
+    
+    .video-title {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-section {
+        padding: 40px 15px;
+    }
+    
+    .video-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .video-section {
+        padding: 30px 10px;
+    }
+    
+    .video-title {
+        font-size: 16px;
+    }
+}

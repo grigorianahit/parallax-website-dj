@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../header-footer/style.css">
+    <link rel="icon" href="../header-footer/img/Favicon.svg" type="image/x-icon">
+
+</head>
+<body><div class="cursor"></div>
+    
+    <header>
+        <div class="logo-container">
+            <a href="../Home/home.html" class="logo"><img src="img/logo.svg" alt=""></a>
+        </div>
+        <div class="header-buttons">
+            <button class="connect-btn" onclick="window.location.href='../Contact/contact.html'">
+                <img src="img/voice.svg" alt="">
+                Let's connect
+            </button>
+            <button class="menu-btn">
+                <img src="img/menu.svg" alt="">
+                Menu
+            </button>
+        </div>
+    </header>
+    
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay">
+        <button class="close-menu">×</button>
+        <div class="menu-content">
+            <ul>
+                <li><a href="../Home/home.html">Home</a></li>
+                <li><a href="../Music/music.html">Music</a></li>
+                <li><a href="../Live/live.html">Live</a></li>
+                <li><a href="../Video/video.html">Videos</a></li>
+                <li><a href="../About/about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="vinyl-container">
+            <img src="img/vinil.png" alt="Vinyl record" class="vinyl-img">
+        </div>
+        <div class="contact-form">
+            <div class="contact-info">
+                <h1>Contact Information</h1>
+                <div class="info-item">
+                    <h3>Phone number</h3>
+                    <p>(+1) 228-828-8228</p>
+                </div>
+                <div class="info-item">
+                    <h3>Email address</h3>
+                    <p>henryjacobsofficial@gmail.com</p>
+                </div>
+            </div>
+
+            <h1>Let's talk</h1>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="from_name" name="from_name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="from_email" name="from_email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+                <div id="formMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init("lq_gzf_J4U7k2DvqD");
+        })();
+
+        // Get form and message display elements
+        const form = document.getElementById('contactForm');
+        const messageDiv = document.getElementById('formMessage');
+
+        // Form submission event listener
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Reset previous error/success states
+            const inputs = this.querySelectorAll('input, textarea');
+            inputs.forEach(input => input.classList.remove('error'));
+            messageDiv.innerHTML = ' ';
+            messageDiv.classList.remove('success-message', 'error-message');
+
+            // Validate inputs
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    isValid = false;
+                }
+            });
+
+            // Email validation
+            const emailInput = document.getElementById('from_email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailInput.classList.add('error');
+                isValid = false;
+            }
+
+            // If validation passes, send email
+            if (isValid) {
+                // Disable submit button to prevent multiple submissions
+                const submitButton = form.querySelector('button');
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Sending...';
+
+                // Send email using EmailJS
+                emailjs.sendForm('service_9bqldv2', 'template_a3bdgho', this)
+                    .then(() => {
+                        // Success
+                        messageDiv.innerHTML = 'Message sent successfully!';
+                        messageDiv.classList.add('success-message');
+                        form.reset(); // Clear form fields
+                    }, (error) => {
+                        // Error
+                        console.error('Email send failed:', error);
+                        messageDiv.innerHTML = 'Failed to send message. Please try again.';
+                        messageDiv.classList.add('error-message');
+                    })
+                    .finally(() => {
+                        // Re-enable submit button
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = 'Send';
+                    });
+            }
+        });
+    </script>
+
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a target="_blank" href="../ZZZ/terms-of-use.pdf">TERMS OF USE</a>
+            <a target="_blank" href="../ZZZ/privacy-policy.pdf">PRIVACY POLICY</a>
+        </div>
+        <a style="color: white; text-decoration: none;" target="_blank" href="https://kaytser.com/">Kaytser LLC</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="../header-footer/script.js"></script>
+</body>
+</html>

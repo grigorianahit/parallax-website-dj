@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../header-footer/style.css">
+    <link rel="icon" href="../header-footer/img/Favicon.svg" type="image/x-icon">
+
+</head>
+<body><div class="cursor"></div>
+    
+    <header>
+        <div class="logo-container">
+            <a href="../Home/home.html" class="logo"><img src="img/logo.svg" alt=""></a>
+        </div>
+        <div class="header-buttons">
+            <button class="connect-btn" onclick="window.location.href='../Contact/contact.html'">
+                <img src="img/voice.svg" alt="">
+                Let's connect
+            </button>
+            <button class="menu-btn">
+                <img src="img/menu.svg" alt="">
+                Menu
+            </button>
+        </div>
+    </header>
+    
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay">
+        <button class="close-menu">×</button>
+        <div class="menu-content">
+            <ul>
+                <li><a href="../Home/home.html">Home</a></li>
+                <li><a href="../Music/music.html">Music</a></li>
+                <li><a href="../Live/live.html">Live</a></li>
+                <li><a href="../Video/video.html">Videos</a></li>
+                <li><a href="../About/about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section class="live-events">
+        <div class="video-container">
+            <video class="bg-video" autoplay muted loop playsinline>
+                <source src="video/section2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="live-overlay"></div>
+        <div class="live-content">
+            <h1 class="live-title">LIVE</h1>
+            <div class="events-list">
+                <div class="event-item">
+                    <span class="event-date">3.11.2024</span>
+                    <span class="event-venue">ZEROTOKYO, TOKYO, JAPAN (S)</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">21.11.2024</span>
+                    <span class="event-venue">ZOUK NIGHTCLUB, LAS VEGAS, NV, US</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">23.11.2024</span>
+                    <span class="event-venue">SKYDECK, NASHVILLE, TN, US (S)</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">6.12.2024</span>
+                    <span class="event-venue">TALLINN CREATIVE HUB, TALLINN, ESTONIA (M)</span>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">13.12.2024</span>
+                    <span class="event-venue">MCDLBEAST SOUNDSTORM, RIYADH, SAUDI ARABIA (S)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ju1gR192QDM?si=RtpvgMX7rwI7nUym" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h2 class="video-title">Tayna - Si Ai</h2>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a target="_blank" href="../ZZZ/terms-of-use.pdf">TERMS OF USE</a>
+            <a target="_blank" href="../ZZZ/privacy-policy.pdf">PRIVACY POLICY</a>
+        </div>
+        <a style="color: white; text-decoration: none;" target="_blank" href="https://kaytser.com/">Kaytser LLC</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="../header-footer/script.js"></script>
+</body>
+</html>

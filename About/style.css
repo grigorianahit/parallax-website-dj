@@ -1,0 +1,171 @@
+/* Reset */
+header {
+    background: transparent;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 120px 4% 100px;
+    overflow: hidden;
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 92, 125, 0.3);
+    z-index: 0;
+}
+
+.content-box::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* Content Box */
+.content-box {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    background: rgba(224, 233, 252, 0.75);
+    padding: 3rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    max-height: 70vh;
+    overflow-y: scroll;
+    font-weight: 400;
+}
+
+/* Typography Base Styles */
+.content-box h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.content-box p {
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.5;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1400px) {
+    .content-box {
+        max-width: 500px;
+        padding: 2.5rem;
+    }
+
+    .content-box h1 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        margin-bottom: 1.3rem;
+    }
+
+    .content-box p {
+        font-size: clamp(15px, 1.1vw, 17px);
+        margin-bottom: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .content-box {
+        max-width: 450px;
+        padding: 2rem;
+    }
+
+    .content-box h1 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        margin-bottom: 1.2rem;
+    }
+
+    .content-box p {
+        font-size: clamp(14px, 1vw, 16px);
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-section {
+        justify-content: center;
+    }
+
+    .content-box {
+        max-width: 600px;
+    }
+
+    .content-box h1 {
+        font-size: clamp(1.5rem, 2.8vw, 2rem);
+    }
+
+    .content-box p {
+        font-size: clamp(14px, 0.9vw, 15px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-box {
+        padding: 1.8rem;
+    }
+
+    .content-box h1 {
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        margin-bottom: 1rem;
+    }
+
+    .content-box p {
+        font-size: clamp(13px, 0.85vw, 14px);
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-section {
+        padding: 100px 15px 80px;
+    }
+
+    .content-box {
+        padding: 1.5rem;
+    }
+
+    .content-box h1 {
+        font-size: clamp(1.3rem, 2vw, 1.6rem);
+    }
+
+    .content-box p {
+        font-size: clamp(12px, 0.8vw, 13px);
+        margin-bottom: 0.8rem;
+    }
+}
